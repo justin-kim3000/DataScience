@@ -1,7 +1,5 @@
 import random
-
 numlist = []
-res = []
 
 print("1부터 45까지 숫자를 입력하세요.")
 print("랜덤한 숫자 1개를 입력하려면 숫자 77을 입력하세요.")
@@ -17,9 +15,8 @@ while 1:
     if 1 <= value <= 45:
         if value not in numlist:
             numlist.append(value)
-        numlist = list(set(numlist))
         numlist.sort()
-        print("현재 입력한 숫자는 %s입니다." % numlist)
+        print("지금까지 입력한 숫자는 %s입니다." % numlist)
 
     elif value == 77:
         while 1:
@@ -31,7 +28,7 @@ while 1:
                 continue
         numlist.sort()
         print("랜덤 숫자는 %d입니다." % randValue)
-        print("현재 입력한 숫자는 %s입니다." % numlist)
+        print("지금까지 입력한 숫자는 %s입니다." % numlist)
 
     elif value == 20000:
         while 1:
@@ -44,11 +41,11 @@ while 1:
             else:
                 break
         numlist.sort()
-        print("현재 입력한 숫자는 %s입니다." % numlist)
+        print("지금까지 입력한 숫자는 %s입니다." % numlist)
     else:
         print("1부터 45까지의 숫자만 넣어주세요.")
 
-
+# res = []
 # 랜덤 숫자 추출
 # while 1:
 #     if len(res) == 6:
