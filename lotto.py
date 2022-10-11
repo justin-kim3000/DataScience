@@ -21,7 +21,7 @@ while 1:
     elif value == 77:
         while 1:
             randValue = random.randint(1, 45)
-            if value not in numlist:
+            if randValue not in numlist:
                 numlist.append(randValue)
                 break
             else:
@@ -34,7 +34,7 @@ while 1:
         while 1:
             randValue = random.randint(1, 45)
             if len(numlist) < 6:
-                if value not in numlist:
+                if randValue not in numlist:
                     numlist.append(randValue)
                 else:
                     continue
@@ -45,16 +45,46 @@ while 1:
     else:
         print("1부터 45까지의 숫자만 넣어주세요.")
 
-# res = []
+# numlist에 내가 선택한 숫자가 들어있음.
+print("내가 선택한 번호: ", numlist)
+
+
+randPick = []
 # 랜덤 숫자 추출
-# while 1:
-#     if len(res) == 6:
-#         break
+while 1:
+    if len(randPick) == 6:
+        break
 
-#     randValue = random.randint(1, 45)
+    randValue = random.randint(1, 45)
 
-#     if randValue not in res:
-#         res.append(randValue)
-#     res = list(set(res))
-#     res.sort()
-# print(res)
+    if randValue not in randPick:
+        randPick.append(randValue)
+    randPick = list(set(randPick))
+    randPick.sort()
+
+# 마지막에 보너스 값 추가
+BonusPick = []
+while 1:
+    BonusValue = random.randint(1, 45)
+    if BonusValue not in randPick:
+        BonusPick.append(BonusValue)
+        break
+
+# 당첨번호
+print("랜덤으로 뽑은 당첨 번호: ", randPick)
+print("보너스 값은 :", BonusPick)
+
+
+# 맞은 갯수 체크
+countNum = 0
+resNum = []
+for i in numlist:
+    if i in randPick:
+        countNum += 1
+        resNum.append(i)
+
+print("일치하는 갯수 : ", countNum)
+print("일치하는 값 : ", resNum)
+
+
+# 결과 나열
